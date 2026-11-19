@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+body{margin:0;padding:20px;font-family:sans-serif;background:var(--tg-theme-bg-color,#fff);color:var(--tg-theme-text-color,#222)}
+h2{margin-top:0}input{width:100%;box-sizing:border-box;padding:14px;font-size:17px;border:1px solid #ccc;border-radius:10px;margin:10px 0}
+button{width:100%;padding:14px;font-size:17px;border:0;border-radius:10px;background:#8b2c4c;color:#fff;margin-top:8px}
+.card{border:1px solid #ddd;border-radius:12px;padding:14px;margin:10px 0}
+.step{opacity:.6;font-size:14px}
+</style></head><body><div id="app"></div>
+<script>
+const tg=Telegram.WebApp;tg.ready();tg.expand();
+const q=new URLSearchParams(location.search);
+const page=q.get("page")||"create";
+const app=document.getElementById("app");
+const el=(t,x)=>{const e=document.createElement(t);if(x)e.textContent=x;return e};
+
+if(page==="create"){
+  const steps=[
+    {k:"names",t:"Kelin va kuyov ismlari",p:"Masalan: Ali va Vali"},
+    {k:"date",t:"To'y sanasi va vaqti",p:"15-dekabr, soat 18:00"},
+    {k:"place",t:"To'yxona nomi va manzili",p:"Navoiy to'yxonasi, Toshkent"}
+  ];
+  const vals={};let i=0;
+  function show(){
+    app.innerHTML="";
+    const s=steps[i];
+    app.append(el("div",`${i+1}-qadam / ${steps.length}`));
+    app.lastChild.className="step";
+    app.append(el("h2",s.t));
+    const inp=el("input");inp.placeholder=s.p;inp.value=vals[s.k]||"";app.append(inp);
+    const b=el("button",i<steps.length-1?"Keyingisi ➡️":"Taklifnomani yaratish ✅");
+    b.onclick=()=>{
+      if(!inp.value.trim()){inp.focus();return}
+      vals[s.k]=inp.value.trim();
+      if(i<steps.length-1){i++;show()}
+      else{tg.sendData(JSON.stringify({action:"create",...vals}))}
+    };
+    app.append(b);
+    if(i>0){const back=el("button","⬅️ Orqaga");back.style.background="#888";back.onclick=()=>{vals[s.k]=inp.value;i--;show()};app.append(back)}
+  }
+  show();
+}
+else if(page==="my"){
+  app.append(el("h2","📂 Mening taklifnomalarim"));
+  let list=[];
+  try{list=JSON.parse(decodeURIComponent(escape(atob(q.get("d").replace(/-/g,"+").replace(/_/g,"/")))))}catch(e){}
+  if(!list.length)app.append(el("p","Hali taklifnoma yaratmagansiz."));
+  list.reverse().forEach(x=>{
+    const c=el("div");c.className="card";
+    c.append(el("b","👰🤵 "+x.n));c.append(el("div","📅 "+x.d));c.append(el("div","📍 "+x.p));
+    app.append(c);
+  });
+}
+else{
+  app.append(el("h2","📞 Aloqa"));
+  app.append(el("p","Savol yoki buyurtma uchun bog'laning:"));
+  const a=el("button","Telegram: @SIZNING_USERNAME");a.onclick=()=>tg.openTelegramLink("https://t.me/SIZNING_USERNAME");app.append(a);
+  const t=el("button","Telefon: +998 90 123 45 67");t.onclick=()=>tg.openLink("tel:+998901234567");app.append(t);
+}
+</script></body></html>
