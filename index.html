@@ -1,61 +1,81 @@
-<!DOCTYPE html><html><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17130f">
+<title>TAKLIFNOMA PREMIUM</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
-body{margin:0;padding:20px;font-family:sans-serif;background:var(--tg-theme-bg-color,#fff);color:var(--tg-theme-text-color,#222)}
-h2{margin-top:0}input{width:100%;box-sizing:border-box;padding:14px;font-size:17px;border:1px solid #ccc;border-radius:10px;margin:10px 0}
-button{width:100%;padding:14px;font-size:17px;border:0;border-radius:10px;background:#8b2c4c;color:#fff;margin-top:8px}
-.card{border:1px solid #ddd;border-radius:12px;padding:14px;margin:10px 0}
-.step{opacity:.6;font-size:14px}
-</style></head><body><div id="app"></div>
+:root{--bg:#17130f;--panel:#211c16;--gold:#d9b878;--cream:#f7efdf;--muted:#b8aa94;--line:#594a35;--pink:#8b5260}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#3a2d20 0,#17130f 48%);color:var(--cream);font-family:Georgia,'Times New Roman',serif;min-height:100vh}
+.wrap{max-width:720px;margin:auto;padding:22px 16px 40px}.brand{text-align:center;padding:22px 8px 26px}.brand .mark{font-size:12px;letter-spacing:5px;color:var(--gold)}.brand h1{font-size:clamp(25px,7vw,38px);letter-spacing:2px;margin:12px 0;color:var(--gold);font-weight:500}.brand p{font-size:15px;line-height:1.6;color:#eadfc9;margin:0 auto;max-width:430px}.orn{color:var(--gold);letter-spacing:8px;margin:16px 0 0}
+.notice{border:1px solid #8e7042;background:linear-gradient(135deg,#302519,#211a13);border-radius:16px;padding:16px;margin:0 0 24px;text-align:center}.notice strong{display:block;color:var(--gold);letter-spacing:1px;font-size:17px;margin-bottom:7px}.notice p{margin:0;color:#e9dcc4;line-height:1.5;font-size:14px}
+h2{font-size:21px;font-weight:500;color:var(--gold);margin:25px 0 12px}.sub{font:13px Arial,sans-serif;color:var(--muted);line-height:1.5}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.design{border:1px solid var(--line);border-radius:14px;background:rgba(37,30,22,.92);padding:12px;cursor:pointer;transition:.2s}.design.active{border:2px solid var(--gold);padding:11px;box-shadow:0 0 0 2px #d9b87822}.sample{height:116px;border-radius:9px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;margin-bottom:10px;overflow:hidden}.sample span{font-size:18px;line-height:1.3}.s1{background:linear-gradient(145deg,#fff8eb,#ead9c3);color:#795b49;border:5px double #c8a77d}.s2{background:linear-gradient(145deg,#f8e7e8,#fff9f0);color:#985d69;border:1px solid #d7a9b1}.s3{background:linear-gradient(145deg,#25352e,#101a16);color:#e5cb8d;border:2px solid #b89b60}.s4{background:linear-gradient(145deg,#171717,#40301e);color:#f0d59a;border:3px double #c8a45c}.s5{background:linear-gradient(145deg,#e8e2d6,#b9a88c);color:#4b4032;border:1px solid #c5b18c}.s6{background:linear-gradient(145deg,#30213c,#100d18);color:#e8c8ff;border:2px solid #b89bd0}.design b{display:block;font-size:15px;font-weight:500}.price{color:var(--gold);font: bold 14px Arial,sans-serif;margin-top:5px}.tag{font:10px Arial,sans-serif;color:var(--muted);margin-top:5px}
+.panel{background:rgba(34,28,21,.95);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:14px}label{display:block;color:#e7d7bd;font-size:14px;margin:13px 0 6px}input,select{width:100%;padding:13px 12px;border-radius:10px;border:1px solid #66543c;background:#17130f;color:var(--cream);font-size:16px;outline:none}input:focus,select:focus{border-color:var(--gold)}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btn{width:100%;border:0;border-radius:11px;padding:15px 14px;background:linear-gradient(110deg,#b18a4e,#e4cb91);color:#21180e;font-weight:bold;font-size:16px;margin-top:17px;cursor:pointer}.btn.secondary{background:#493a2a;color:var(--cream);border:1px solid var(--line)}.total{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:13px;border-top:1px solid var(--line);font:14px Arial,sans-serif}.total strong{font-size:20px;color:var(--gold)}.hint{font:12px Arial,sans-serif;color:var(--muted);line-height:1.5;margin-top:10px}.hide{display:none!important}.footer{text-align:center;color:#8f806b;font:11px Arial,sans-serif;margin-top:26px;line-height:1.6}
+@media(max-width:420px){.grid{gap:9px}.sample{height:100px}.design{padding:9px}.design.active{padding:8px}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="brand">
+ <div class="mark">PREMIUM DIGITAL INVITATIONS</div>
+ <h1>TAKLIFNOMA PREMIUM</h1>
+ <p>Hayotingizdagi muhim kuningiz — unutilmas taklif bilan!</p>
+ <div class="orn">✦ ❧ ✦</div>
+</header>
+<section class="notice">
+ <strong>🎁 MAXSUS ESLATMA — 50% VOUCHER</strong>
+ <p>30 000 so‘mdan yuqori dizayn tanlab, birinchi buyurtmangizni yakunlang. Keyingi taklifnomangiz uchun 50% chegirmali voucher oling!</p>
+</section>
+<h2>1. Marosim turini tanlang</h2>
+<div class="panel">
+ <select id="event"><option value="Nikoh to‘yi">Nikoh to‘yi</option><option value="Tug‘ilgan kun">Tug‘ilgan kun</option><option value="Sunnat to‘yi">Sunnat to‘yi</option><option value="Yubiley">Yubiley</option><option value="Beshik to‘yi">Beshik to‘yi</option><option value="Boshqa marosim">Boshqa marosim</option></select>
+</div>
+<h2>2. Premium dizaynni tanlang</h2>
+<div class="grid" id="designs">
+ <div class="design active" data-id="classic" data-price="5000"><div class="sample s1"><span>Taklif<br><small>♥</small><br>noma</span></div><b>Classic</b><div class="price">5 000 so‘m</div><div class="tag">Sodda va nafis</div></div>
+ <div class="design" data-id="floral" data-price="25000"><div class="sample s2"><span>With Love<br>❀</span></div><b>Floral</b><div class="price">25 000 so‘m</div><div class="tag">Gul naqshlari</div></div>
+ <div class="design" data-id="royal" data-price="55000"><div class="sample s3"><span>ROYAL<br>✦</span></div><b>Royal</b><div class="price">55 000 so‘m</div><div class="tag">Hashamatli uslub</div></div>
+ <div class="design" data-id="gold" data-price="85000"><div class="sample s4"><span>THE<br>INVITATION</span></div><b>Gold Luxury</b><div class="price">85 000 so‘m</div><div class="tag">Oltin bezaklar</div></div>
+ <div class="design" data-id="elegance" data-price="120000"><div class="sample s5"><span>Elegant<br>Celebration</span></div><b>Elegance</b><div class="price">120 000 so‘m</div><div class="tag">Maxsus premium</div></div>
+ <div class="design" data-id="vip" data-price="150000"><div class="sample s6"><span>VIP<br>EXCLUSIVE</span></div><b>VIP Exclusive</b><div class="price">150 000 so‘m</div><div class="tag">Eng yuqori daraja</div></div>
+</div>
+<h2>3. Taklifnoma ma’lumotlari</h2>
+<div class="panel">
+ <label for="names">Ismlar yoki tadbir egasining ismi</label><input id="names" maxlength="80" placeholder="Masalan: Ali va Madina">
+ <label for="date">Sana va vaqt</label><input id="date" maxlength="80" placeholder="Masalan: 20-dekabr, soat 18:00">
+ <label for="place">Manzil</label><input id="place" maxlength="160" placeholder="To‘yxona nomi va manzili">
+ <label for="message">Qo‘shimcha tilak (ixtiyoriy)</label><input id="message" maxlength="180" placeholder="Sizni kutib qolamiz!">
+ <div class="total"><span>Tanlangan dizayn narxi</span><strong id="total">5 000 so‘m</strong></div>
+ <p class="hint">Voucher keyingi buyurtma uchun beriladi. Chegirma faqat server tasdiqlagan, muddati tugamagan kod bilan qo‘llanadi.</p>
+ <button class="btn" id="send">Buyurtmani davom ettirish →</button>
+ <button class="btn secondary" id="back">Telegramga qaytish</button>
+ <p class="hint" id="status" aria-live="polite"></p>
+</div>
+<section class="panel" id="contact" style="margin-top:18px;text-align:center">
+  <p><a href="https://t.me/Zok1rov1ch_05" target="_blank" rel="noopener">Telegram: @Zok1rov1ch_05</a></p>
+  <p><a href="tel:+998774070508">Telefon: +998774070508</a></p>
+</section>
+<div class="footer">TAKLIFNOMA PREMIUM · Sizning unutilmas kuningiz uchun</div>
+</div>
 <script>
-const tg=Telegram.WebApp;tg.ready();tg.expand();
-const q=new URLSearchParams(location.search);
-const page=q.get("page")||"create";
-const app=document.getElementById("app");
-const el=(t,x)=>{const e=document.createElement(t);if(x)e.textContent=x;return e};
-
-if(page==="create"){
-  const steps=[
-    {k:"names",t:"Kelin va kuyov ismlari",p:"Masalan: Ali va Vali"},
-    {k:"date",t:"To'y sanasi va vaqti",p:"15-dekabr, soat 18:00"},
-    {k:"place",t:"To'yxona nomi va manzili",p:"Navoiy to'yxonasi, Toshkent"}
-  ];
-  const vals={};let i=0;
-  function show(){
-    app.innerHTML="";
-    const s=steps[i];
-    app.append(el("div",`${i+1}-qadam / ${steps.length}`));
-    app.lastChild.className="step";
-    app.append(el("h2",s.t));
-    const inp=el("input");inp.placeholder=s.p;inp.value=vals[s.k]||"";app.append(inp);
-    const b=el("button",i<steps.length-1?"Keyingisi ➡️":"Taklifnomani yaratish ✅");
-    b.onclick=()=>{
-      if(!inp.value.trim()){inp.focus();return}
-      vals[s.k]=inp.value.trim();
-      if(i<steps.length-1){i++;show()}
-      else{tg.sendData(JSON.stringify({action:"create",...vals}))}
-    };
-    app.append(b);
-    if(i>0){const back=el("button","⬅️ Orqaga");back.style.background="#888";back.onclick=()=>{vals[s.k]=inp.value;i--;show()};app.append(back)}
-  }
-  show();
-}
-else if(page==="my"){
-  app.append(el("h2","📂 Mening taklifnomalarim"));
-  let list=[];
-  try{list=JSON.parse(decodeURIComponent(escape(atob(q.get("d").replace(/-/g,"+").replace(/_/g,"/")))))}catch(e){}
-  if(!list.length)app.append(el("p","Hali taklifnoma yaratmagansiz."));
-  list.reverse().forEach(x=>{
-    const c=el("div");c.className="card";
-    c.append(el("b","👰🤵 "+x.n));c.append(el("div","📅 "+x.d));c.append(el("div","📍 "+x.p));
-    app.append(c);
-  });
-}
-else{
-  app.append(el("h2","📞 Aloqa"));
-  app.append(el("p","Savol yoki buyurtma uchun bog'laning:"));
-  const a=el("button","Telegram: @SIZNING_USERNAME");a.onclick=()=>tg.openTelegramLink("https://t.me/SIZNING_USERNAME");app.append(a);
-  const t=el("button","Telefon: +998 90 123 45 67");t.onclick=()=>tg.openLink("tel:+998901234567");app.append(t);
-}
-</script></body></html>
+const tg=window.Telegram?.WebApp;
+if(tg){tg.ready();tg.expand();}
+let selected={id:'classic',price:5000};
+const money=n=>new Intl.NumberFormat('uz-UZ').format(n)+' so‘m';
+document.querySelectorAll('.design').forEach(card=>card.addEventListener('click',()=>{
+ document.querySelectorAll('.design').forEach(x=>x.classList.remove('active'));
+ card.classList.add('active');selected={id:card.dataset.id,price:Number(card.dataset.price)};
+ document.getElementById('total').textContent=money(selected.price);
+}));
+document.getElementById('send').addEventListener('click',()=>{
+ const data={action:'order_request',brand:'TAKLIFNOMA PREMIUM',event:document.getElementById('event').value,design:selected.id,price:selected.price,names:document.getElementById('names').value.trim(),date:document.getElementById('date').value.trim(),place:document.getElementById('place').value.trim(),message:document.getElementById('message').value.trim()};
+ if(!data.names||!data.date||!data.place){document.getElementById('status').textContent='Iltimos, ism, sana va manzilni to‘ldiring.';return;}
+ if(!tg){document.getElementById('status').textContent='Bu sahifani Telegram bot ichidan oching.';return;}
+ document.getElementById('status').textContent='Buyurtma ma’lumotlari botga yuborilmoqda…';
+ tg.sendData(JSON.stringify(data));
+});
+document.getElementById('back').addEventListener('click',()=>{if(tg)tg.close();else history.back();});
+</script>
+</body></html>
